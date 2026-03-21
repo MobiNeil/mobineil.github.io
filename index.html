@@ -394,7 +394,7 @@ Rates: £30-£40 per 1,000 words depending on level of work needed.
 							<!-- LIVE -->
 							<!--<form method="post" action="https://formspree.io/f/mwvrjpwa">-->
 							<!-- TEST -->
-							<form method="post" action="https://formspree.io/f/xvzwngyv">
+							<form id="contact-form" method="post" action="https://formspree.io/f/xvzwngyv">
 								<div class="row">
 									<div class="col-6 col-12-mobile"><input type="text" name="name" id="name" placeholder="Name" /></div>
 									<div class="col-6 col-12-mobile"><input type="email" name="email" id="email" placeholder="Email" /></div>
@@ -440,4 +440,16 @@ Rates: £30-£40 per 1,000 words depending on level of work needed.
 			<script src="assets/js/main.js"></script>
 
 	</body>
+	<script>
+  window.addEventListener("pageshow", function (event) {
+    // Check if the page was restored from the browser's back/forward cache
+    var historyTraversal = event.persisted || 
+                           (typeof window.performance != "undefined" && 
+                            window.performance.navigation.type === 2);
+    if (historyTraversal) {
+      // Find your form by its ID and reset it
+      document.getElementById("contact-form").reset();
+    }
+  });
+</script>
 </html>
